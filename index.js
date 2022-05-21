@@ -24,7 +24,7 @@ app.get('/products/:productId', async (req, res) => {
         const response = await request (`${generateScraperUrl(api_key)}&url=https://www.amazon.com/dp/${ productId }`);
         res.json(JSON.parse(response));
     }catch (error) {
-        res.json(error);
+        res.send('If you see this message, it means you are experiencing an error. To make this API work, you should use an API key and run this on a local port. Thank you.');
     }
 })
 // GET product reviews
